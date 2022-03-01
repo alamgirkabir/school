@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="alamgir (generated)" id="1646166238759-1">
+        <createTable tableName="course">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="coursePK"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="alamgir (generated)" id="1646166238759-2">
+        <createTable tableName="student">
+            <column autoIncrement="true" name="id" type="BIGINT">
+                <constraints primaryKey="true" primaryKeyName="studentPK"/>
+            </column>
+            <column name="name" type="VARCHAR(255)">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="alamgir (generated)" id="1646166238759-3">
+        <createTable tableName="student_course">
+            <column name="course_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+            <column name="student_id" type="BIGINT">
+                <constraints nullable="false"/>
+            </column>
+        </createTable>
+    </changeSet>
+    <changeSet author="alamgir (generated)" id="1646166238759-4">
+        <addPrimaryKey columnNames="course_id, student_id" constraintName="student_coursePK" tableName="student_course"/>
+    </changeSet>
+    <changeSet author="alamgir (generated)" id="1646166238759-5">
+        <addUniqueConstraint columnNames="id" constraintName="UC_COURSEID_COL" tableName="course"/>
+    </changeSet>
+    <changeSet author="alamgir (generated)" id="1646166238759-6">
+        <addUniqueConstraint columnNames="name" constraintName="UC_COURSENAME_COL" tableName="course"/>
+    </changeSet>
+    <changeSet author="alamgir (generated)" id="1646166238759-7">
+        <addUniqueConstraint columnNames="id" constraintName="UC_STUDENTID_COL" tableName="student"/>
+    </changeSet>
+    <changeSet author="alamgir (generated)" id="1646166238759-8">
+        <addForeignKeyConstraint baseColumnNames="course_id" baseTableName="student_course" constraintName="FKejrkh4gv8iqgmspsanaji90ws" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="course"/>
+    </changeSet>
+    <changeSet author="alamgir (generated)" id="1646166238759-9">
+        <addForeignKeyConstraint baseColumnNames="student_id" baseTableName="student_course" constraintName="FKq7yw2wg9wlt2cnj480hcdn6dq" deferrable="false" initiallyDeferred="false" referencedColumnNames="id" referencedTableName="student"/>
+    </changeSet>
+</databaseChangeLog>
