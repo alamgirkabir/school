@@ -27,7 +27,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author alamgir
  */
 @RestController
-@RequestMapping("/course")
+@RequestMapping("/api/course")
 public class CourseController {
     @Autowired
     private CourseService courseService;

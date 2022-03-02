@@ -30,7 +30,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @author alamgir
  */
 @RestController
-@RequestMapping("/student")
+@RequestMapping("/api/student")
 public class StudentController {
 
     @Autowired

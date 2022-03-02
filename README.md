@@ -28,7 +28,9 @@ Technology stack:
 • MySQL
 • Liquibase
 • swagger documentation
+• jwt authorization
 
 -----------------------------------------------------------------------
 # swagger link
 http://localhost:8080/swagger-ui/
+Swagger authorization
