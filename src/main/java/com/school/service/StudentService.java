@@ -5,6 +5,7 @@
  */
 package com.school.service;
 
+import com.school.config.constants.Constant;
 import com.school.controller.exception.CourseEnrolledException;
 import com.school.controller.exception.NoRegistrationFoundException;
 import com.school.controller.exception.ResourceNotFoundException;
@@ -84,10 +85,10 @@ public class StudentService {
         StudentEntity student = studentOptional.get();
         CourseEntity course = courseOptional.get();
 
-        if (studentCourseRepository.getNoOfEnrolledCourse(studentId) >= 5) {
+        if (studentCourseRepository.getNoOfEnrolledCourse(studentId) >= Constant.MAX_ENROLLED_COURSE) {
             throw new CourseEnrolledException("Exceed enrolled course");
         }
-        if (studentCourseRepository.getNoOfEnrolledStudent(courseId) >= 50) {
+        if (studentCourseRepository.getNoOfEnrolledStudent(courseId) >= Constant.MAX_REGISTERED_USER) {
             throw new CourseEnrolledException("Exceed enrolled student");
         }
 
