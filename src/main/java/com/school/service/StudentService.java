@@ -18,6 +18,9 @@ import com.school.repo.StudentRepository;
 import java.util.List;
 import java.util.Optional;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 /**
@@ -57,8 +60,9 @@ public class StudentService {
         studentRepository.deleteById(studentId);
     }
 
-    public List<StudentEntity> getStudents() {
-        return studentRepository.findAll();
+    public Page<StudentEntity> getStudents(Integer pageNumber, Integer pageSize) {
+        Pageable pageable = PageRequest.of(pageNumber, pageSize);
+        return studentRepository.findAll(pageable);
     }
 
     public boolean enrollCourse(Long studentId, Long courseId) throws Exception {

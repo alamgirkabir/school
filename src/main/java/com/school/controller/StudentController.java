@@ -11,9 +11,12 @@ import com.school.controller.exception.ResourceNotFoundException;
 import com.school.entity.CourseEntity;
 import com.school.entity.StudentEntity;
 import com.school.service.StudentService;
+import com.sun.istack.internal.NotNull;
 import io.swagger.annotations.ApiOperation;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
@@ -37,10 +40,10 @@ public class StudentController {
 
     @ApiOperation(value = "Fetch all students")
     @GetMapping
-    public ResponseEntity getStudents() {
+    public ResponseEntity getStudents(Integer pageNumber, Integer pageSize) {
         try {
-            List<StudentEntity> students = studentService.getStudents();
-            if (students.size() <= 0) {
+            Page<StudentEntity> students = studentService.getStudents(pageNumber, pageSize);
+            if (students.isEmpty()) {
                 return ResponseEntity.notFound().build();
             } else {
                 return ResponseEntity.ok().body(students);
