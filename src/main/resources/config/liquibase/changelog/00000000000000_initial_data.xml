@@ -1,0 +1,67 @@
+<?xml version="1.1" encoding="UTF-8" standalone="no"?>
+<databaseChangeLog xmlns="http://www.liquibase.org/xml/ns/dbchangelog" xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.5.xsd">
+    <changeSet author="alamgir (generated)" id="1646243471409-1">
+        <loadData catalogName="school" 
+                  commentLineStartsWith="#"
+                  encoding="UTF-8"  
+                  file="data/users.csv"  
+                  quotchar="'" 
+                  relativeToChangelogFile="true" 
+                  schemaName="public" 
+                  separator=";" 
+                  tableName="users" >
+        </loadData>
+        <loadData catalogName="school" 
+                  commentLineStartsWith=""
+                  encoding="UTF-8"  
+                  file="data/roles.csv"  
+                  quotchar="'" 
+                  relativeToChangelogFile="true" 
+                  schemaName="public" 
+                  separator=";" 
+                  tableName="roles" >
+        </loadData>
+        <loadData catalogName="school" 
+                  commentLineStartsWith=""
+                  encoding="UTF-8"  
+                  file="data/user_roles.csv"  
+                  quotchar="'" 
+                  relativeToChangelogFile="true" 
+                  schemaName="public" 
+                  separator=";" 
+                  tableName="user_roles" >
+        </loadData>
+        <loadData catalogName="school" 
+                  commentLineStartsWith=""
+                  encoding="UTF-8"  
+                  file="data/student.csv"  
+                  quotchar="'" 
+                  relativeToChangelogFile="true" 
+                  schemaName="public" 
+                  separator=";" 
+                  tableName="student" >
+        </loadData>
+        <loadData catalogName="school" 
+                  commentLineStartsWith=""
+                  encoding="UTF-8"  
+                  file="data/course.csv"  
+                  quotchar="'" 
+                  relativeToChangelogFile="true" 
+                  schemaName="public" 
+                  separator=";" 
+                  tableName="course" >
+        </loadData>
+        <loadData catalogName="school" 
+                  commentLineStartsWith=""
+                  encoding="UTF-8"  
+                  file="data/student_course.csv"  
+                  quotchar="'" 
+                  relativeToChangelogFile="true" 
+                  schemaName="public" 
+                  separator=";" 
+                  tableName="student_course" >
+        </loadData>
+
+    </changeSet>
+    
+</databaseChangeLog>

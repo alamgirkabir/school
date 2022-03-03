@@ -1,0 +1,4 @@
+id;email;password;username
+1;admin@admin.com;$2a$10$raNLt3xvb1ZSGpnb3sZ5/Op3KPGImtRWF8lQROVieB5GZD.U2ynAS;admin
+2;user@user.com;$2a$10$raNLt3xvb1ZSGpnb3sZ5/Op3KPGImtRWF8lQROVieB5GZD.U2ynAS;user
+3;kabir@gmail.com;$2a$10$raNLt3xvb1ZSGpnb3sZ5/Op3KPGImtRWF8lQROVieB5GZD.U2ynAS;kabir
