@@ -34,3 +34,13 @@ Technology stack:
 # swagger link
 http://localhost:8080/swagger-ui/
 Swagger authorization
+**First execute signin request, hence copied the jwt token and paste in the text box of swagger authorization box
+after that it will send authorization bearer token header for every request**
+
+
+-----------------------------------------------------------------------
+# Liquibase file generation while entity changes
+Command is given below
+**mvn liquibase:diff**
+
+
